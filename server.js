@@ -33,4 +33,8 @@ app.post('/chat', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+// Cette ligne dit au serveur d'afficher ton fichier index.html
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 app.listen(PORT, () => console.log(`SamyAI actif sur le port ${PORT}`));
